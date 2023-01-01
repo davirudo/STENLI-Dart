@@ -1,5 +1,8 @@
-class AppAssets {
+class AppAsset {
   static const logo = 'assets/logo.png';
-  static const profil = 'assets/profil1.png';
+  static const profile = 'assets/profil.png';
+  static const pengeluaran = 'assets/pengeluaran.png';
+  static const batas = 'assets/batas.png';
+  static const darurat = 'assets/darurat.png';
+  static const menabung = 'assets/menabung.png';
 }
-
