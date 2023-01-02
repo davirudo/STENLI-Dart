@@ -43,7 +43,7 @@ class _PemasukanPageState extends State<PemasukanPage> {
                   height: 30,
                 ),
                 Text(
-                  "DOJA",
+                  "STENLI",
                   style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
                 )
               ],

@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 import 'package:stenli/config/app_assets.dart';
 import 'package:stenli/config/app_color.dart';
 import 'package:stenli/data/source/source_user.dart';
+import 'package:stenli/presentation/page/auth/register_page.dart';
 import 'package:stenli/presentation/page/home_page.dart';
 import 'package:stenli/config/app_fonts.dart';
 
@@ -28,7 +29,7 @@ class _LoginPageState extends State<LoginPage> {
         controllerPassword.text,
       );
       if (success) {
-        DInfo.dialogSuccess('Berhasil Login');
+        DInfo.dialogSuccess('berhasil Login');
         DInfo.closeDialog(actionAfterClose: () {
           Get.off(() => const HomePage());
         });
@@ -136,7 +137,9 @@ class _LoginPageState extends State<LoginPage> {
                     children: [
                       Text('belum punya akun? '),
                       GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Get.to(() => RegisterPage());
+                        },
                         child: const Text(
                           'klik disini',
                           style: TextStyle(
