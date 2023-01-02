@@ -1,12 +1,12 @@
 <?php
 include '../connection.php';
 
-$username = $_POST['username'];
+$email = $_POST['email'];
 $password = md5($_POST['password']);
 
 $sql = "SELECT * FROM user
         WHERE
-        username = '$username' AND password = '$password'
+        email = '$email' AND password = '$password'
         ";
 
 $result = $connect->query($sql);
