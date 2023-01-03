@@ -17,7 +17,7 @@ class CustomBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       toolbarHeight: 70,
       backgroundColor: Colors.white,
-      foregroundColor: AppColor.sblue,
+      foregroundColor: AppColor.primary,
       shape: Border(bottom: BorderSide(color: lineColor, width: 5)),
       elevation: 4,
       title: Text(judul),

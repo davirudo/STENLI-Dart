@@ -1,15 +1,12 @@
 import 'package:d_info/d_info.dart';
 import 'package:d_view/d_view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:stenli/config/app_assets.dart';
 import 'package:stenli/config/app_color.dart';
 import 'package:stenli/data/source/source_user.dart';
 import 'package:stenli/presentation/page/auth/register_page.dart';
 import 'package:stenli/presentation/page/dashboard_page.dart';
-import 'package:stenli/presentation/page/home_page.dart';
 import 'package:stenli/config/app_fonts.dart';
 
 class LoginPage extends StatefulWidget {
@@ -66,8 +63,8 @@ class _LoginPageState extends State<LoginPage> {
                         DView.spaceHeight(10),
                         Text(
                           "STENLI",
-                          style: AppFonts.card1
-                              .copyWith(color: AppColor.bg, letterSpacing: 10),
+                          style: AppFonts.card1.copyWith(
+                              color: AppColor.primary, letterSpacing: 10),
                         ),
                         DView.spaceHeight(40),
                         TextFormField(
@@ -76,10 +73,10 @@ class _LoginPageState extends State<LoginPage> {
                               value == '' ? 'jangan kosong' : null,
                           autovalidateMode: AutovalidateMode.onUserInteraction,
                           decoration: InputDecoration(
-                              fillColor: AppColor.primary.withOpacity(0.5),
+                              fillColor: AppColor.chart.withOpacity(0.5),
                               filled: true,
                               border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(40),
+                                borderRadius: BorderRadius.circular(17),
                                 borderSide: BorderSide.none,
                               ),
                               hintText: 'email',
@@ -95,10 +92,10 @@ class _LoginPageState extends State<LoginPage> {
                           controller: controllerPassword,
                           obscureText: true,
                           decoration: InputDecoration(
-                              fillColor: AppColor.primary.withOpacity(0.5),
+                              fillColor: AppColor.chart.withOpacity(0.5),
                               filled: true,
                               border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(40),
+                                borderRadius: BorderRadius.circular(17),
                                 borderSide: BorderSide.none,
                               ),
                               hintText: 'password',
@@ -110,23 +107,19 @@ class _LoginPageState extends State<LoginPage> {
                         Material(
                           //button//
                           color: AppColor.primary,
-                          borderRadius: BorderRadius.circular(40),
+                          borderRadius: BorderRadius.circular(17),
                           child: InkWell(
-                            borderRadius: BorderRadius.circular(40),
+                            borderRadius: BorderRadius.circular(10),
                             onTap: () => login(),
                             child: Padding(
                               padding: const EdgeInsets.symmetric(
-                                  horizontal: 22, vertical: 16),
-                              child: Text(
-                                'login',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16,
-                                ),
-                              ),
+                                  horizontal: 75, vertical: 12),
+                              child: Text('LOGIN',
+                                  style: AppFonts.desc.copyWith(
+                                      color: Colors.white, fontSize: 16)),
                             ),
                           ),
-                        )
+                        ),
                       ],
                     ),
                   ),

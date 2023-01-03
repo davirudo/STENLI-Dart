@@ -367,7 +367,7 @@ class _HomePageState extends State<HomePage> {
                               padding: EdgeInsets.all(9),
                               decoration: BoxDecoration(
                                   shape: BoxShape.circle,
-                                  color: AppColor.orange),
+                                  color: AppColor.syellow),
                               child: Image.asset(
                                 AppAsset.menabung,
                                 height: 38,
