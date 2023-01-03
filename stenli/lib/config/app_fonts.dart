@@ -12,9 +12,16 @@ class AppFonts {
     fontSize: 26,
     fontWeight: FontWeight.w600,
   );
+
+  static const top = TextStyle(
+      color: Color(0xFF186A81), fontWeight: FontWeight.w700, fontSize: 20);
+  static const title = TextStyle(
+      color: Color(0xFFFFFFFF), fontWeight: FontWeight.w700, fontSize: 16);
+  static const desc =
+      TextStyle(color: Colors.white, fontWeight: FontWeight.w500, fontSize: 12);
+
   static const peepee =
       TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: Colors.grey);
-
   static const card1 =
       TextStyle(fontSize: 28, fontWeight: FontWeight.w700, color: Colors.white);
   static const card2 =

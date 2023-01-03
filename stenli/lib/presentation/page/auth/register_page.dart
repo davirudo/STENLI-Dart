@@ -3,6 +3,7 @@ import 'package:stenli/presentation/controller/c_user.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../config/widget/app_bar.dart';
 import '../../../data/source/source_user.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -22,13 +23,16 @@ class RegisterPageState extends State<RegisterPage> {
   register() async {
     if (formKey.currentState!.validate()) {
       await SourceUser.register(
-          controllerName.text, controllerEmail.text, controllerPassword.text);
+          controllerName.text, 
+          controllerEmail.text, 
+          controllerPassword.text);
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: CustomBar(judul: "REGISTER", lineColor: AppColor.sblue),
       body: LayoutBuilder(
         builder: (Context, Constraints) {
           return SingleChildScrollView(
