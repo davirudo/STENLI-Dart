@@ -103,7 +103,7 @@ class _HomePageState extends State<HomePage> {
                 ]),
               ),
               decoration: BoxDecoration(
-                  color: AppColor.sred,
+                  color: AppColor.primary,
                   borderRadius: BorderRadius.circular(10)),
             ),
             DView.spaceHeight(),
@@ -201,10 +201,8 @@ class _HomePageState extends State<HomePage> {
                     },
                     child: InkWell(
                       onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => FaqPage()));
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => FaqPage()));
                       },
                       child: Container(
                         width: 165,
