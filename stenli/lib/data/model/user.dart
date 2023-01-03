@@ -1,7 +1,7 @@
 class User {
   User({
     this.idUser,
-    this.nama,
+    this.name,
     this.email,
     this.password,
     this.createdAt,
@@ -9,7 +9,7 @@ class User {
   });
 
   String? idUser;
-  String? nama;
+  String? name;
   String? email;
   String? password;
   String? createdAt;
@@ -17,7 +17,7 @@ class User {
 
   factory User.fromJson(Map<String, dynamic> json) => User(
         idUser: json["id_user"],
-        nama: json["nama"],
+        name: json["name"],
         email: json["email"],
         password: json["password"],
         createdAt: json["created_at"],
@@ -26,7 +26,7 @@ class User {
 
   Map<String, dynamic> toJson() => {
         "id_user": idUser,
-        "nama": nama,
+        "name": name,
         "email": email,
         "password": password,
         "created_at": createdAt,

@@ -1,7 +1,5 @@
 import 'package:d_view/d_view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:stenli/config/app_assets.dart';
 import 'package:stenli/config/app_color.dart';
@@ -74,10 +72,17 @@ class _HomePageState extends State<HomePage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Obx(() {
-                          return Text(cUser.data.nama ?? '');
+                          return Text(
+                            cUser.data.name ?? '',
+                            style: AppFonts.desc,
+                          );
                         }),
-                        Text("amikom"),
-                        Text("students")
+                        Obx(() {
+                          return Text(
+                            cUser.data.email ?? '',
+                            style: AppFonts.desc,
+                          );
+                        }),
                       ],
                     ),
                   ),
@@ -169,7 +174,7 @@ class _HomePageState extends State<HomePage> {
               padding: const EdgeInsets.only(left: 8),
               child: Row(
                 children: [
-                  Text("Reccomedation For You", style: AppFonts.featureName),
+                  Text("Recommendation For You", style: AppFonts.featureName),
                 ],
               ),
             ),
@@ -311,7 +316,7 @@ class _HomePageState extends State<HomePage> {
                                   shape: BoxShape.circle,
                                   color: AppColor.sblue),
                               child: Image.asset(
-                                AppAsset.pengeluaran,
+                                AppAsset.batas,
                                 height: 38,
                                 width: 38,
                               ),
@@ -320,7 +325,7 @@ class _HomePageState extends State<HomePage> {
                               height: 18,
                             ),
                             Text(
-                              'are you monthly expenses irregular? lets set a limit for your spending',
+                              'lets set a limit for your spending',
                               style: AppFonts.details,
                             ),
                             SizedBox(
@@ -352,7 +357,7 @@ class _HomePageState extends State<HomePage> {
                             decoration: BoxDecoration(
                                 shape: BoxShape.circle, color: AppColor.orange),
                             child: Image.asset(
-                              AppAsset.darurat,
+                              AppAsset.menabung,
                               height: 38,
                               width: 38,
                             ),
