@@ -6,13 +6,13 @@ import '../../../config/app_fonts.dart';
 import '../../../config/app_format.dart';
 import '../../../config/widget/app_bar.dart';
 
-class PerbulanPage extends StatelessWidget {
-  const PerbulanPage({super.key});
+class FaqPage extends StatelessWidget {
+  const FaqPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomBar(judul: "FAQ", lineColor: AppColor.sblue),
+      appBar: CustomBar(judul: "FAQ", lineColor: AppColor.green),
       body: SafeArea(
           child: Column(
         children: [

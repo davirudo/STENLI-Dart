@@ -12,9 +12,10 @@ import 'package:stenli/presentation/page/feature/batas_page.dart';
 import 'package:stenli/presentation/page/feature/darurat_page.dart';
 import 'package:stenli/presentation/page/feature/pemasukan_page.dart';
 import 'package:stenli/presentation/page/feature/pengeluaran_page.dart';
-import 'package:stenli/presentation/page/feature/perbulan_page.dart';
+import 'package:stenli/presentation/page/feature/faq_page.dart';
 
 import '../../config/app_format.dart';
+import 'feature/menabung_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -203,7 +204,7 @@ class _HomePageState extends State<HomePage> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => PerbulanPage()));
+                                builder: (context) => FaqPage()));
                       },
                       child: Container(
                         width: 165,
@@ -346,39 +347,48 @@ class _HomePageState extends State<HomePage> {
                   SizedBox(
                     width: 15,
                   ),
-                  Container(
-                    width: 165,
-                    height: 165,
-                    decoration: BoxDecoration(
-                        color: AppColor.yellow,
-                        borderRadius: BorderRadius.circular(20)),
-                    child: Padding(
-                      padding: const EdgeInsets.all(10),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            padding: EdgeInsets.all(9),
-                            decoration: BoxDecoration(
-                                shape: BoxShape.circle, color: AppColor.orange),
-                            child: Image.asset(
-                              AppAsset.menabung,
-                              height: 38,
-                              width: 38,
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => MenabungPage()));
+                    },
+                    child: Container(
+                      width: 165,
+                      height: 165,
+                      decoration: BoxDecoration(
+                          color: AppColor.yellow,
+                          borderRadius: BorderRadius.circular(20)),
+                      child: Padding(
+                        padding: const EdgeInsets.all(10),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              padding: EdgeInsets.all(9),
+                              decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: AppColor.orange),
+                              child: Image.asset(
+                                AppAsset.menabung,
+                                height: 38,
+                                width: 38,
+                              ),
                             ),
-                          ),
-                          SizedBox(
-                            height: 18,
-                          ),
-                          Text(
-                            'lets start setting your saving plan and target',
-                            style: AppFonts.details,
-                          ),
-                          SizedBox(
-                            height: 12,
-                          ),
-                          Text('Mulai Menabung', style: AppFonts.featureName)
-                        ],
+                            SizedBox(
+                              height: 18,
+                            ),
+                            Text(
+                              'lets start setting your saving plan and target',
+                              style: AppFonts.details,
+                            ),
+                            SizedBox(
+                              height: 12,
+                            ),
+                            Text('Lama Menabung', style: AppFonts.featureName)
+                          ],
+                        ),
                       ),
                     ),
                   ),

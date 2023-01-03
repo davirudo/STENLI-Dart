@@ -13,13 +13,13 @@ class BatasPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomBar(judul: "REGISTER", lineColor: AppColor.sblue),
+      appBar: CustomBar(judul: "Batas Pengeluaran", lineColor: AppColor.sblue),
       body: Column(
         children: [
           Container(
             width: 400,
             height: 209,
-            decoration: BoxDecoration(color: AppColor.blue),
+            decoration: BoxDecoration(color: AppColor.sblue),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
