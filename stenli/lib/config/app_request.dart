@@ -1,6 +1,4 @@
 import 'dart:convert';
-// import 'dart:html';
-
 import 'package:d_method/d_method.dart';
 import 'package:http/http.dart' as http;
 
@@ -17,9 +15,14 @@ class AppRequest {
     }
   }
 
-   static Future<Map?> post(String url, post,Object? body, {Map<String, String>? headers}) async {
+   static Future<Map?> post(String url, post,Object? body, 
+   {Map<String, String>? headers}) async {
     try {
-      var response = await http.post(Uri.parse(url),body: body , headers: headers);
+      var response = await http.post(
+        Uri.parse(url),
+        body: body , 
+        headers: headers
+        );
       DMethod.printTitle('try - $url', response.body);
       Map responseBody = jsonDecode(response.body);
       return responseBody;
