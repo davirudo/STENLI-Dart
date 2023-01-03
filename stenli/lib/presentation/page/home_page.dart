@@ -238,14 +238,13 @@ class _HomePageState extends State<HomePage> {
                                 height: 18,
                               ),
                               Text(
-                                'lets start calculating your monthly expenses',
+                                'improve your financial knowledge',
                                 style: AppFonts.details,
                               ),
                               SizedBox(
                                 height: 12,
                               ),
-                              Text('Pengeluaran Bulanan',
-                                  style: AppFonts.featureName)
+                              Text('FAQ', style: AppFonts.featureName)
                             ],
                           ),
                         ),

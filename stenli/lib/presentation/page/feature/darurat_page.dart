@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:stenli/config/app_color.dart';
 import 'package:stenli/config/app_fonts.dart';
 
@@ -13,7 +11,7 @@ class DaruratPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomBar(judul: "REGISTER", lineColor: AppColor.sblue),
+      appBar: CustomBar(judul: "Dana Darurat", lineColor: AppColor.sred),
       body: Column(
         children: [
           Container(

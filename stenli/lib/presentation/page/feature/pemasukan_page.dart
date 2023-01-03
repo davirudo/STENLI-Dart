@@ -27,7 +27,7 @@ class _PemasukanPageState extends State<PemasukanPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomBar(judul: "REGISTER", lineColor: AppColor.sblue),
+      appBar: CustomBar(judul: "Pemasukan", lineColor: AppColor.sblue),
       body: SafeArea(
           child: Column(
         children: [
