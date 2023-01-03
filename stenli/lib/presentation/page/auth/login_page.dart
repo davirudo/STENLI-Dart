@@ -8,6 +8,7 @@ import 'package:stenli/config/app_assets.dart';
 import 'package:stenli/config/app_color.dart';
 import 'package:stenli/data/source/source_user.dart';
 import 'package:stenli/presentation/page/auth/register_page.dart';
+import 'package:stenli/presentation/page/dashboard_page.dart';
 import 'package:stenli/presentation/page/home_page.dart';
 import 'package:stenli/config/app_fonts.dart';
 
@@ -31,7 +32,7 @@ class _LoginPageState extends State<LoginPage> {
       if (success) {
         DInfo.dialogSuccess('berhasil Login');
         DInfo.closeDialog(actionAfterClose: () {
-          Get.off(() => const HomePage());
+          Get.off(() => const DashboardPage());
         });
       } else {
         DInfo.dialogSuccess('gagal Login');

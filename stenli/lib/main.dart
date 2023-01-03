@@ -5,6 +5,7 @@ import 'package:stenli/config/app_color.dart';
 import 'package:stenli/config/session.dart';
 import 'package:stenli/data/model/user.dart';
 import 'package:stenli/presentation/page/auth/login_page.dart';
+import 'package:stenli/presentation/page/dashboard_page.dart';
 import 'package:stenli/presentation/page/home_page.dart';
 
 void main() {
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
         future: Session.getUser(),
         builder: (context, AsyncSnapshot<User> snapshot) {
           if (snapshot.data != null && snapshot.data!.idUser != null) {
-            return const HomePage();
+            return const DashboardPage();
           }
           return const LoginPage();
         },

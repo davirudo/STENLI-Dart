@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:stenli/config/app_color.dart';
+import 'package:stenli/config/app_fonts.dart';
 import 'package:stenli/presentation/page/home_page.dart';
 
 void main() => runApp(const DashboardPage());
 
 class DashboardPage extends StatelessWidget {
   const DashboardPage({super.key});
-
-  static const String _title = 'Flutter Code Sample';
-
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      title: _title,
+      debugShowCheckedModeBanner: false,
       home: MyStatefulWidget(),
     );
   }
@@ -26,17 +25,16 @@ class MyStatefulWidget extends StatefulWidget {
 
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+
   static const List<Widget> _widgetOptions = <Widget>[
     HomePage(),
     Text(
-      'Index 1: Business',
-      style: optionStyle,
+      'in development',
+      style: AppFonts.optionStyle,
     ),
     Text(
-      'Index 2: School',
-      style: optionStyle,
+      'in development',
+      style: AppFonts.optionStyle,
     ),
   ];
 
@@ -49,9 +47,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('BottomNavigationBar Sample'),
-      ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
@@ -62,16 +57,16 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            label: 'Business',
+            icon: Icon(Icons.wallet),
+            label: 'Donation',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.school),
-            label: 'School',
+            icon: Icon(Icons.account_circle),
+            label: 'Profile',
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
+        selectedItemColor: AppColor.primary,
         onTap: _onItemTapped,
       ),
     );
