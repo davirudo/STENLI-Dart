@@ -2,6 +2,7 @@ import 'package:stenli/config/app_color.dart';
 import 'package:stenli/presentation/controller/c_user.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:stenli/presentation/page/auth/login_page.dart';
 
 import '../../../config/widget/app_bar.dart';
 import '../../../data/source/source_user.dart';
@@ -23,9 +24,8 @@ class RegisterPageState extends State<RegisterPage> {
   register() async {
     if (formKey.currentState!.validate()) {
       await SourceUser.register(
-          controllerName.text, 
-          controllerEmail.text, 
-          controllerPassword.text);
+          controllerName.text, controllerEmail.text, controllerPassword.text);
+      Get.offAll(() => const LoginPage());
     }
   }
 
