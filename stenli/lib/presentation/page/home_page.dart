@@ -48,11 +48,8 @@ class _HomePageState extends State<HomePage> {
                           width: 38,
                         ),
                         Text(
-                          'STENLI',
-                          style: TextStyle(
-                              fontWeight: FontWeight.w700,
-                              fontSize: 16,
-                              color: AppColor.sblue),
+                          "STENLI",
+                          style: AppFonts.top,
                         ),
                       ],
                     ),
@@ -103,7 +100,7 @@ class _HomePageState extends State<HomePage> {
                 ]),
               ),
               decoration: BoxDecoration(
-                  color: AppColor.primary,
+                  color: AppColor.secondary,
                   borderRadius: BorderRadius.circular(10)),
             ),
             DView.spaceHeight(),
