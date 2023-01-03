@@ -34,36 +34,35 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(left: 15),
-              child: Padding(
-                padding: const EdgeInsets.only(
-                    left: 10, right: 20.0, bottom: 10, top: 5),
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: Row(
-                        children: [
-                          DView.spaceHeight(),
-                          Image.asset(
-                            AppAsset.logo,
-                            width: 38,
-                          ),
-                          Text(
-                            'STENLI',
-                            style: TextStyle(
-                                fontWeight: FontWeight.w700, fontSize: 16),
-                          ),
-                        ],
-                      ),
+              padding: const EdgeInsets.only(
+                  left: 20, right: 20.0, bottom: 10, top: 5),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Row(
+                      children: [
+                        DView.spaceHeight(),
+                        Image.asset(
+                          AppAsset.logo,
+                          width: 38,
+                        ),
+                        Text(
+                          'STENLI',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontSize: 16,
+                              color: AppColor.sblue),
+                        ),
+                      ],
                     ),
-                    IconButton(
-                        onPressed: () {
-                          Session.clearUser;
-                          Get.off(() => const LoginPage());
-                        },
-                        icon: Icon(Icons.logout))
-                  ],
-                ),
+                  ),
+                  IconButton(
+                      onPressed: () {
+                        Session.clearUser;
+                        Get.off(() => const LoginPage());
+                      },
+                      icon: Icon(Icons.logout))
+                ],
               ),
             ),
             Container(
@@ -93,19 +92,13 @@ class _HomePageState extends State<HomePage> {
                           Obx(() {
                             return Text(
                               cUser.data.email ?? '',
-                              style: AppFonts.desc,
+                              style: AppFonts.poopoo,
                             );
                           }),
                         ],
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(0, 0, 16, 0),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                    ),
-                  )
                 ]),
               ),
               decoration: BoxDecoration(

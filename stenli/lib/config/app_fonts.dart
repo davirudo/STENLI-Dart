@@ -22,6 +22,8 @@ class AppFonts {
 
   static const peepee =
       TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: Colors.grey);
+  static const poopoo = TextStyle(
+      fontSize: 14, fontWeight: FontWeight.w500, color: Colors.white70);
   static const card1 =
       TextStyle(fontSize: 28, fontWeight: FontWeight.w700, color: Colors.white);
   static const card2 =
