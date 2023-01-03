@@ -70,7 +70,7 @@ class _HomePageState extends State<HomePage> {
               width: 358,
               height: 102,
               child: Padding(
-                padding: const EdgeInsets.only(left: 9),
+                padding: const EdgeInsets.only(left: 18),
                 child: Row(children: [
                   Image.asset(
                     AppAsset.profile,
@@ -78,23 +78,26 @@ class _HomePageState extends State<HomePage> {
                   ),
                   SizedBox(width: 9),
                   Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Obx(() {
-                          return Text(
-                            cUser.data.name ?? '',
-                            style: AppFonts.desc,
-                          );
-                        }),
-                        Obx(() {
-                          return Text(
-                            cUser.data.email ?? '',
-                            style: AppFonts.desc,
-                          );
-                        }),
-                      ],
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 10),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Obx(() {
+                            return Text(
+                              cUser.data.name ?? '',
+                              style: AppFonts.desc,
+                            );
+                          }),
+                          Obx(() {
+                            return Text(
+                              cUser.data.email ?? '',
+                              style: AppFonts.desc,
+                            );
+                          }),
+                        ],
+                      ),
                     ),
                   ),
                   Padding(
@@ -241,7 +244,7 @@ class _HomePageState extends State<HomePage> {
                               SizedBox(
                                 height: 12,
                               ),
-                              Text('pengeluaran bulanan',
+                              Text('Pengeluaran Bulanan',
                                   style: AppFonts.featureName)
                             ],
                           ),

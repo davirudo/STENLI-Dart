@@ -6,6 +6,7 @@ import 'package:stenli/config/app_color.dart';
 
 import '../../../config/app_fonts.dart';
 import '../../../config/app_format.dart';
+import '../../../config/widget/app_bar.dart';
 
 class PerbulanPage extends StatelessWidget {
   const PerbulanPage({super.key});
@@ -13,6 +14,7 @@ class PerbulanPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: CustomBar(judul: "REGISTER", lineColor: AppColor.sblue),
       body: SafeArea(
           child: Column(
         children: [

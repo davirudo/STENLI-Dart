@@ -6,6 +6,8 @@ import 'package:stenli/config/app_assets.dart';
 import 'package:stenli/config/app_color.dart';
 import 'package:stenli/data/source/source_pemasukan.dart';
 
+import '../../../config/widget/app_bar.dart';
+
 class PemasukanPage extends StatefulWidget {
   PemasukanPage({super.key});
 
@@ -25,32 +27,7 @@ class _PemasukanPageState extends State<PemasukanPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: 70,
-        backgroundColor: Colors.white,
-        foregroundColor: AppColor.green,
-        shape: Border(bottom: BorderSide(color: AppColor.sgreen, width: 5)),
-        elevation: 4,
-        title: Text("catat pemasukan"),
-        actions: <Widget>[
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              children: [
-                Image.asset(
-                  AppAsset.logo,
-                  width: 28,
-                  height: 30,
-                ),
-                Text(
-                  "STENLI",
-                  style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
-                )
-              ],
-            ),
-          ),
-        ],
-      ),
+      appBar: CustomBar(judul: "REGISTER", lineColor: AppColor.sblue),
       body: SafeArea(
           child: Column(
         children: [

@@ -5,6 +5,7 @@ import 'package:stenli/config/app_color.dart';
 import 'package:stenli/config/app_fonts.dart';
 
 import '../../../config/app_format.dart';
+import '../../../config/widget/app_bar.dart';
 
 class DaruratPage extends StatelessWidget {
   const DaruratPage({super.key});
@@ -12,6 +13,7 @@ class DaruratPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: CustomBar(judul: "REGISTER", lineColor: AppColor.sblue),
       body: Column(
         children: [
           Container(
