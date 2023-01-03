@@ -35,24 +35,35 @@ class _HomePageState extends State<HomePage> {
           children: [
             Padding(
               padding: const EdgeInsets.only(left: 15),
-              child: Row(
-                children: [
-                  DView.spaceHeight(),
-                  Image.asset(
-                    AppAsset.logo,
-                    width: 38,
-                  ),
-                  Text(
-                    'STENLI',
-                    style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
-                  ),
-                  IconButton(
-                      onPressed: () {
-                        Session.clearUser;
-                        Get.off(() => const LoginPage());
-                      },
-                      icon: Icon(Icons.logout))
-                ],
+              child: Padding(
+                padding: const EdgeInsets.only(
+                    left: 10, right: 20.0, bottom: 10, top: 5),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Row(
+                        children: [
+                          DView.spaceHeight(),
+                          Image.asset(
+                            AppAsset.logo,
+                            width: 38,
+                          ),
+                          Text(
+                            'STENLI',
+                            style: TextStyle(
+                                fontWeight: FontWeight.w700, fontSize: 16),
+                          ),
+                        ],
+                      ),
+                    ),
+                    IconButton(
+                        onPressed: () {
+                          Session.clearUser;
+                          Get.off(() => const LoginPage());
+                        },
+                        icon: Icon(Icons.logout))
+                  ],
+                ),
               ),
             ),
             Container(
@@ -90,7 +101,6 @@ class _HomePageState extends State<HomePage> {
                     padding: const EdgeInsets.fromLTRB(0, 0, 16, 0),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: [Text("monday, 20-12-2022")],
                     ),
                   )
                 ]),
