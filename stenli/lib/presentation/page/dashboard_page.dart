@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:stenli/config/app_color.dart';
 import 'package:stenli/config/app_fonts.dart';
+import 'package:stenli/presentation/page/donation_page.dart';
 import 'package:stenli/presentation/page/home_page.dart';
 
 void main() => runApp(const DashboardPage());
@@ -28,10 +29,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
   static const List<Widget> _widgetOptions = <Widget>[
     HomePage(),
-    Text(
-      'in development',
-      style: AppFonts.optionStyle,
-    ),
+    DonationPage(),
     Text(
       'in development',
       style: AppFonts.optionStyle,

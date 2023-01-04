@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:stenli/data/model/Pemasukan.dart';
+import 'package:stenli/data/model/pemasukan.dart';
 import 'package:stenli/data/model/user.dart';
 import 'package:stenli/data/source/source_pemasukan.dart';
 

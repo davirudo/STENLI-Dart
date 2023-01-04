@@ -30,5 +30,7 @@ class AppFonts {
   static const card1 =
       TextStyle(fontSize: 28, fontWeight: FontWeight.w700, color: Colors.white);
   static const card2 =
-      TextStyle(fontSize: 20, fontWeight: FontWeight.w700, color: Colors.white);
+      TextStyle(fontSize: 20, fontWeight: FontWeight.w500, color: Colors.white);
+  static const card3 =
+      TextStyle(fontSize: 18, fontWeight: FontWeight.w400, color: Colors.white);
 }

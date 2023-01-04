@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:d_info/d_info.dart';
-import 'package:stenli/data/model/Pemasukan.dart';
+import 'package:stenli/data/model/pemasukan.dart';
 
 import '../../config/api.dart';
 import '../../config/app_request.dart';
