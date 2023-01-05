@@ -4,10 +4,8 @@ import 'package:get/get.dart';
 import 'package:stenli/config/app_assets.dart';
 import 'package:stenli/config/app_color.dart';
 import 'package:stenli/config/app_fonts.dart';
-import 'package:stenli/config/session.dart';
 import 'package:stenli/presentation/controller/c_pemasukan.dart';
 import 'package:stenli/presentation/controller/c_user.dart';
-import 'package:stenli/presentation/page/auth/login_page.dart';
 import 'package:stenli/presentation/page/feature/batas_page.dart';
 import 'package:stenli/presentation/page/feature/darurat_page.dart';
 import 'package:stenli/presentation/page/feature/pemasukan_page.dart';
@@ -239,8 +237,10 @@ class _HomePageState extends State<HomePage> {
                   ),
                   InkWell(
                     onTap: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => DaruratPage()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => DaruratPage()));
                     },
                     child: Container(
                       width: 165,
@@ -306,7 +306,8 @@ class _HomePageState extends State<HomePage> {
                             Container(
                               padding: EdgeInsets.all(9),
                               decoration: BoxDecoration(
-                                  shape: BoxShape.circle, color: AppColor.sblue),
+                                  shape: BoxShape.circle,
+                                  color: AppColor.sblue),
                               child: Image.asset(
                                 AppAsset.batas,
                                 height: 38,
@@ -323,7 +324,8 @@ class _HomePageState extends State<HomePage> {
                             SizedBox(
                               height: 12,
                             ),
-                            Text('Batas Pengeluaran', style: AppFonts.featureName)
+                            Text('Batas Pengeluaran',
+                                style: AppFonts.featureName)
                           ],
                         ),
                       ),

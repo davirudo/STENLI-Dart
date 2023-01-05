@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:stenli/config/app_color.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AppFonts {
   static const details = TextStyle(fontSize: 12);
@@ -14,7 +15,7 @@ class AppFonts {
   );
 
   static const top = TextStyle(
-      color: Color(0xFF186A81), fontWeight: FontWeight.w700, fontSize: 20);
+      color: Color(0xFF186A81), fontWeight: FontWeight.w700, fontSize: 20,);
   static const title = TextStyle(
       color: Color(0xFFFFFFFF), fontWeight: FontWeight.w700, fontSize: 16);
   static const desc =
@@ -33,4 +34,5 @@ class AppFonts {
       TextStyle(fontSize: 20, fontWeight: FontWeight.w500, color: Colors.white);
   static const card3 =
       TextStyle(fontSize: 18, fontWeight: FontWeight.w400, color: Colors.white);
+
 }

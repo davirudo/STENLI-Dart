@@ -1,8 +1,6 @@
 import 'package:d_view/d_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-
 import '../../config/app_assets.dart';
 import '../../config/app_fonts.dart';
 import '../../config/session.dart';

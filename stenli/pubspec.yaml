@@ -45,6 +45,7 @@ dependencies:
   d_info: ^0.0.7
   d_chart: ^1.0.0
   d_input: ^0.0.2
+  google_fonts: ^3.0.1
 
 dev_dependencies:
   flutter_test:

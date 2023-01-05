@@ -1,13 +1,8 @@
 import 'package:d_view/d_view.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:stenli/config/app_assets.dart';
 import 'package:stenli/config/app_color.dart';
 import 'package:stenli/config/app_fonts.dart';
-
-import '../../config/session.dart';
-import 'auth/login_page.dart';
 
 class DonationPage extends StatefulWidget {
   const DonationPage({super.key});
