@@ -1,8 +1,12 @@
 import 'package:d_view/d_view.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 import '../../config/app_assets.dart';
 import '../../config/app_fonts.dart';
+import '../../config/session.dart';
+import 'auth/login_page.dart';
 
 class ProfilePage extends StatefulWidget {
 const ProfilePage({super.key});
@@ -37,6 +41,12 @@ class _ProfilePageState extends State<ProfilePage> {
                   ],
                 ),
               ),
+              IconButton(
+                  onPressed: () {
+                    Session.clearUser;
+                    Get.off(() => const LoginPage());
+                  },
+                  icon: Icon(Icons.logout))
             ],
           ),
         ),

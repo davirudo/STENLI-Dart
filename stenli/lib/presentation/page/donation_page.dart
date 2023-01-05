@@ -1,8 +1,13 @@
 import 'package:d_view/d_view.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:stenli/config/app_assets.dart';
 import 'package:stenli/config/app_color.dart';
 import 'package:stenli/config/app_fonts.dart';
+
+import '../../config/session.dart';
+import 'auth/login_page.dart';
 
 class DonationPage extends StatefulWidget {
   const DonationPage({super.key});
@@ -15,7 +20,7 @@ class _DonationPageState extends State<DonationPage> {
   List<DropdownMenuItem<String>> get dropdownItems {
     List<DropdownMenuItem<String>> menuItems = [
       DropdownMenuItem(child: Text("BRI - 3412 2321 3213"), value: "bri"),
-      DropdownMenuItem(child: Text("Gopay - 0821 3434 5517"), value: "Canada"),
+      DropdownMenuItem(child: Text("Gopay - 0821 3434 5517"), value: "gopay"),
       DropdownMenuItem(child: Text("Shopee - 0821 3434 5517"), value: "shopee"),
     ];
     return menuItems;
@@ -28,15 +33,33 @@ class _DonationPageState extends State<DonationPage> {
       body: LayoutBuilder(builder: (context, constrains) {
         return SingleChildScrollView(
           child: Column(
-            
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               DView.nothing(),
               Form(
                 child: Padding(
-                  padding: EdgeInsets.only(left: 20, right: 20, top: 50),
+                  padding: EdgeInsets.only(left: 20, right: 20, top: 5),
                   child: Column(
                     children: [
+                      Row(
+                        children: [
+                          Expanded(
+                            child: Row(
+                              children: [
+                                DView.spaceHeight(),
+                                Image.asset(
+                                  AppAsset.logo,
+                                  width: 38,
+                                ),
+                                Text(
+                                  "STENLI",
+                                  style: AppFonts.top,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
                       Image.asset(
                         AppAsset.donasi,
                       ),

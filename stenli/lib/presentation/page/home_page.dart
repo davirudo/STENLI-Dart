@@ -54,12 +54,6 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                   ),
-                  IconButton(
-                      onPressed: () {
-                        Session.clearUser;
-                        Get.off(() => const LoginPage());
-                      },
-                      icon: Icon(Icons.logout))
                 ],
               ),
             ),
