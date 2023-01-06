@@ -8,7 +8,7 @@ import '../../config/app_request.dart';
 import '../../config/session.dart';
 import '../model/user.dart';
 
-class SourcePemasukan {
+class SourcePengeluaran {
   static Future<bool> post(String pemasukan) async {
     String url = '${Api.pemasukan}/pemasukan_post.php';
     Map? responseBody = await AppRequest.post(url, '', {

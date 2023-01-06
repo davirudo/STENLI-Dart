@@ -23,9 +23,8 @@ class SourceUser {
 
   static Future<bool> register(
       String name, String email, String password) async {
-    String url =
-        '${Api.user}/register.php'; 
-    Map? responseBody = await AppRequest.post(url,'', {
+    String url = '${Api.user}/register.php';
+    Map? responseBody = await AppRequest.post(url, '', {
       'name': name,
       'email': email,
       'password': password,
