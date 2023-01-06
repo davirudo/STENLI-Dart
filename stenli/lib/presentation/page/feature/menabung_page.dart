@@ -14,55 +14,46 @@ class MenabungPage extends StatelessWidget {
     return Scaffold(
       appBar: CustomBar(judul: "Lama Menabung", lineColor: AppColor.yellow),
       body: SafeArea(
-          child: Column(
+          child: Padding(
+            padding: EdgeInsets.only(left: 20, right: 20, top: 50),
+            child: Column(
         children: [
-          AspectRatio(
-            aspectRatio: 16 / 9,
-            child: DChartPie(
-              data: [
-                {'domain': 'Flutter', 'measure': 200},
-                {'domain': 'React Native', 'measure': 50}
-              ],
-              fillColor: (pieData, index) => AppColor.blue,
-              donutWidth: 30,
-              labelColor: Colors.white,
+            Card(
+              color: Colors.grey[300],
+              child: SizedBox(
+                width: 363,
+                height: 75,
+                child: Center(
+                    child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("Pengeluaran Fixed Kamu", style: AppFonts.featureName),
+                    Text(AppFormat.currency("2000000"),
+                        style: AppFonts.featureNominal),
+                  ],
+                )),
+              ),
             ),
-          ),
-          Card(
-            color: Colors.grey[300],
-            child: SizedBox(
-              width: 363,
-              height: 75,
-              child: Center(
-                  child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text("Pengeluaran Fixed Kamu", style: AppFonts.featureName),
-                  Text(AppFormat.currency("2000000"),
-                      style: AppFonts.featureNominal),
-                ],
-              )),
+            Card(
+              color: Colors.grey[300],
+              child: SizedBox(
+                width: 363,
+                height: 75,
+                child: Center(
+                    child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("Pengeluaran Variable Kamu",
+                        style: AppFonts.featureName),
+                    Text(AppFormat.currency("500000"),
+                        style: AppFonts.featureNominal),
+                  ],
+                )),
+              ),
             ),
-          ),
-          Card(
-            color: Colors.grey[300],
-            child: SizedBox(
-              width: 363,
-              height: 75,
-              child: Center(
-                  child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text("Pengeluaran Variable Kamu",
-                      style: AppFonts.featureName),
-                  Text(AppFormat.currency("500000"),
-                      style: AppFonts.featureNominal),
-                ],
-              )),
-            ),
-          ),
         ],
-      )),
+      ),
+          )),
     );
   }
 }
