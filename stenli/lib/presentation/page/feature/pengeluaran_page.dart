@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:stenli/config/app_assets.dart';
 import 'package:stenli/config/app_color.dart';
+import 'package:stenli/data/source/source_pengeluaran.dart';
 
 import '../../../config/widget/app_bar.dart';
 
@@ -29,9 +30,20 @@ class _PengeluaranPageState extends State<PengeluaranPage> {
   final controllerLainya = TextEditingController();
 
   tambah() async {
-    // // await SourcePemasukan.post(
-    // //   controllerPemasukan.text,
-    // );
+    await SourcePengeluaran.post(
+        controllerTinggal.text,
+        controllerAir.text,
+        controllerInternet.text,
+        controllerKeluarga.text,
+        controllerMakan.text,
+        controllerBensin.text,
+        controllerPeliharaan.text,
+        controllerDonasi.text,
+        controllerBelanja.text,
+        controllerHiburan.text,
+        controllerOlahraga.text,
+        controllerEdukasi.text,
+        controllerLainya.text);
   }
 
   @override
@@ -148,7 +160,9 @@ class _PengeluaranPageState extends State<PengeluaranPage> {
           ),
           InkWell(
             child: TextButton(
-              onPressed: () {},
+              onPressed: () {
+                tambah();
+              },
               child: Text("tambahkan", style: TextStyle(color: Colors.white)),
               style: TextButton.styleFrom(backgroundColor: AppColor.sred),
             ),

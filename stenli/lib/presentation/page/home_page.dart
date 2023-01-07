@@ -5,6 +5,7 @@ import 'package:stenli/config/app_assets.dart';
 import 'package:stenli/config/app_color.dart';
 import 'package:stenli/config/app_fonts.dart';
 import 'package:stenli/presentation/controller/c_pemasukan.dart';
+import 'package:stenli/presentation/controller/c_pengeluaran.dart';
 import 'package:stenli/presentation/controller/c_user.dart';
 import 'package:stenli/presentation/page/feature/batas_page.dart';
 import 'package:stenli/presentation/page/feature/darurat_page.dart';
@@ -25,9 +26,11 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final cUser = Get.put(Cuser());
   final cPemasukan = Get.put(CPemasukan());
+  final cPengeluaran = Get.put(CPengeluaran());
   @override
   void initState() {
     cPemasukan.getAnalysis();
+    cPengeluaran.getAnalysis();
     super.initState();
   }
 
@@ -37,6 +40,7 @@ class _HomePageState extends State<HomePage> {
       body: RefreshIndicator(
         onRefresh: () async {
           cPemasukan.getAnalysis();
+          cPengeluaran.getAnalysis();
         },
         child: ListView(
           children: [
@@ -165,10 +169,12 @@ class _HomePageState extends State<HomePage> {
                                   'pengeluaran',
                                   style: AppFonts.peepee,
                                 ),
-                                Text(
-                                  AppFormat.currency("2500000"),
-                                  style: AppFonts.featureName,
-                                )
+                                Obx((() {
+                                  return Text(
+                                      AppFormat.currency(
+                                          cPengeluaran.total.toString()),
+                                      style: AppFonts.featureName);
+                                })),
                               ],
                             ),
                           ),
