@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:stenli/config/app_theme.dart';
 import 'package:stenli/presentation/page/profile/akun_page.dart';
+import 'package:stenli/presentation/page/profile/kritik_page.dart';
 import '../../config/app_assets.dart';
 import '../../config/app_color.dart';
 import '../../config/app_fonts.dart';
@@ -129,7 +130,8 @@ class _ProfilePageState extends State<ProfilePage> {
           Expanded(
             child: Container(
               child: Container(
-                margin: EdgeInsets.only(top:16.0, left: 16.0, right: 16.0, bottom: 40),
+                margin: EdgeInsets.only(
+                    top: 16.0, left: 16.0, right: 16.0, bottom: 40),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -142,7 +144,8 @@ class _ProfilePageState extends State<ProfilePage> {
                               children: [
                                 Icon(
                                   Icons.info_outline,
-                                  size: 25, color: AppColor.primary,
+                                  size: 25,
+                                  color: AppColor.primary,
                                 ),
                                 SizedBox(width: 25),
                                 Text(
@@ -170,7 +173,8 @@ class _ProfilePageState extends State<ProfilePage> {
                               children: [
                                 Icon(
                                   Icons.note_alt,
-                                  size: 25, color: AppColor.primary,
+                                  size: 25,
+                                  color: AppColor.primary,
                                 ),
                                 SizedBox(width: 25),
                                 Text(
@@ -183,7 +187,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             IconButton(
                               onPressed: () {
                                 Session.clearUser;
-                                Get.off(() => const LoginPage());
+                                Get.off(() => KritikPage());
                               },
                               icon: Icon(Icons.arrow_right_sharp,
                                   size: 25, color: AppColor.primary),
@@ -194,9 +198,16 @@ class _ProfilePageState extends State<ProfilePage> {
                     ),
                     Column(
                       children: [
-                        Text("Keluar",
-                            style: AppFonts.peepee
-                                .copyWith(color: kRedColor),),
+                        TextButton(
+                          onPressed: () {
+                            Session.clearUser;
+                            Get.off(() => const LoginPage());
+                          },
+                          child: Text(
+                            "Keluar",
+                            style: AppFonts.peepee.copyWith(color: kRedColor),
+                          ),
+                        )
                       ],
                     )
                   ],
