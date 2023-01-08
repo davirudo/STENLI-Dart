@@ -4,6 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
   //Ini belum dipake, cuman referensi aja
   //nanti color dan fontnya mau digabungn kesini
   //karena kalo dipisah gtu bisa ngganggu performa aplikasi
+ Color kPrimaryColor = Color(0xff1E387F);
+ Color kSecondaryColor = Color.fromARGB(255, 137, 160, 222);
  Color kBlackColor = Color(0xff222222); 
  Color kBlackAccentColor = Color(0xff2A2B37); 
  Color kGreyColor = Color(0xff94959B); 
@@ -24,34 +26,42 @@ import 'package:google_fonts/google_fonts.dart';
  Color kpurplecolor = Color(0xff5C1588); 
  Color kredaccentcolo = Color(0xffCB504B);
 
- TextStyle blackTextStyle = GoogleFonts.inter( 
+ TextStyle primaryTextStyle = GoogleFonts.poppins(
+  color: kPrimaryColor,
+); 
+
+ TextStyle secondaryTextStyle = GoogleFonts.poppins(
+  color: kSecondaryColor,
+); 
+ 
+ TextStyle blackTextStyle = GoogleFonts.poppins( 
  color: kBlackColor, 
  ); 
- TextStyle blackAccentTextStyle = GoogleFonts.inter( 
+ TextStyle blackAccentTextStyle = GoogleFonts.poppins( 
  color: kBlackAccentColor, 
  ); 
- TextStyle greyTextStyle = GoogleFonts.inter( 
+ TextStyle greyTextStyle = GoogleFonts.poppins( 
  color: kGreyColor, 
  ); 
- TextStyle lineDarkTextStyle = GoogleFonts.inter( 
+ TextStyle lineDarkTextStyle = GoogleFonts.poppins( 
  color: kLineDarkColor, 
  ); 
- TextStyle whiteGreyTextStyle = GoogleFonts.inter( 
+ TextStyle whiteGreyTextStyle = GoogleFonts.poppins( 
  color: kWhiteGreyColor, 
  ); 
- TextStyle whiteTextStyle = GoogleFonts.inter( 
+ TextStyle whiteTextStyle = GoogleFonts.poppins( 
  color: kWhiteColor, 
  ); 
- TextStyle redTextStyle = GoogleFonts.inter( 
+ TextStyle redTextStyle = GoogleFonts.poppins( 
  color: kRedColor, 
  ); 
- TextStyle yellowTextStyle = GoogleFonts.inter( 
+ TextStyle yellowTextStyle = GoogleFonts.poppins( 
  color: kYellowColor, 
  ); 
- TextStyle blueTextStyle = GoogleFonts.inter( 
+ TextStyle blueTextStyle = GoogleFonts.poppins( 
  color: kBlueColor, 
  ); 
- TextStyle darkblueTextStyle = GoogleFonts.inter( 
+ TextStyle darkblueTextStyle = GoogleFonts.poppins( 
 color: kDarkBlueColor, 
  ); 
   
