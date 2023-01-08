@@ -31,6 +31,7 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     cPemasukan.getAnalysis();
     cPengeluaran.getAnalysis();
+    cPengeluaran.Batas();
     super.initState();
   }
 

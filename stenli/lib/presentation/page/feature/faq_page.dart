@@ -1,14 +1,22 @@
 import 'package:d_chart/d_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:stenli/config/app_color.dart';
 
 import '../../../config/app_fonts.dart';
 import '../../../config/app_format.dart';
 import '../../../config/widget/app_bar.dart';
+import '../../controller/c_pengeluaran.dart';
 
-class FaqPage extends StatelessWidget {
+class FaqPage extends StatefulWidget {
   const FaqPage({super.key});
 
+  @override
+  State<FaqPage> createState() => _FaqPageState();
+}
+
+class _FaqPageState extends State<FaqPage> {
+  final cPengeluaran = Get.put(CPengeluaran());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,8 +46,11 @@ class FaqPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text("Pengeluaran Fixed Kamu", style: AppFonts.featureName),
-                  Text(AppFormat.currency("2000000"),
-                      style: AppFonts.featureNominal),
+                  Obx((() {
+                    return Text(
+                        AppFormat.currency(cPengeluaran.fixed.toString()),
+                        style: AppFonts.featureName);
+                  })),
                 ],
               )),
             ),
@@ -55,8 +66,11 @@ class FaqPage extends StatelessWidget {
                 children: [
                   Text("Pengeluaran Variable Kamu",
                       style: AppFonts.featureName),
-                  Text(AppFormat.currency("500000"),
-                      style: AppFonts.featureNominal),
+                  Obx((() {
+                    return Text(
+                        AppFormat.currency(cPengeluaran.variable.toString()),
+                        style: AppFonts.featureName);
+                  })),
                 ],
               )),
             ),
