@@ -7,10 +7,10 @@ $result = $connect->query($sql);
 if ($result->num_rows > 0) {  
     $data = array();
     while ($row = $result->fetch_assoc()) {
-        $data[] = $row;
+        $pemasukan = floatval($row['pemasukan']);
     }
 
 }
 echo json_encode(array(   
-    "pemasukan" => $data[]
+    "pemasukan" => $pemasukan
 ));
