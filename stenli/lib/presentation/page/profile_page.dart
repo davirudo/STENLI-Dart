@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:stenli/config/app_theme.dart';
 import 'package:stenli/presentation/page/profile/akun_page.dart';
 import 'package:stenli/presentation/page/profile/kritik_page.dart';
+import 'package:stenli/presentation/page/profile/tentang_page.dart';
 import '../../config/app_assets.dart';
 import '../../config/app_color.dart';
 import '../../config/app_fonts.dart';
@@ -158,7 +159,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             IconButton(
                               onPressed: () {
                                 Session.clearUser;
-                                Get.off(() => const LoginPage());
+                                Get.off(() => TentangPage());
                               },
                               icon: Icon(Icons.arrow_right_sharp,
                                   size: 25, color: AppColor.primary),
