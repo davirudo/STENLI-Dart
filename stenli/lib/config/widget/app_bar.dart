@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:stenli/config/app_theme.dart';
 import '../app_assets.dart';
 import '../app_color.dart';
 import '../app_fonts.dart';
@@ -20,7 +21,10 @@ class CustomBar extends StatelessWidget implements PreferredSizeWidget {
       foregroundColor: AppColor.primary,
       shape: Border(bottom: BorderSide(color: lineColor, width: 5)),
       elevation: 4,
-      title: Text(judul),
+      title: Text(
+        judul,
+        style: primaryTextStyle.copyWith(fontWeight: semiBold),
+      ),
       actions: <Widget>[
         Padding(
           padding: const EdgeInsets.all(8.0),
@@ -33,8 +37,8 @@ class CustomBar extends StatelessWidget implements PreferredSizeWidget {
               ),
               Text(
                 "STENLI",
-                style: AppFonts.top,
-              )
+                style: primaryTextStyle.copyWith(fontWeight: bold, fontSize: 20
+              ),),
             ],
           ),
         ),
