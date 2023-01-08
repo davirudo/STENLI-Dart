@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:stenli/config/app_color.dart';
-import 'package:stenli/presentation/page/profile_page.dart';
+import 'package:stenli/presentation/page/dashboard_page.dart';
 import '../../../config/app_fonts.dart';
 import '../../../config/session.dart';
 
@@ -28,7 +28,7 @@ class _AkunPageState extends State<AkunPage> {
                       IconButton(
                         onPressed: () {
                           Session.clearUser;
-                          Get.off(() => ProfilePage());
+                          Get.off(() => DashboardPage());
                         },
                         icon: Icon(
                           Icons.arrow_back_sharp,
