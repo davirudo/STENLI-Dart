@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:stenli/config/app_fonts.dart';
+import 'package:stenli/presentation/page/dashboard_page.dart';
 
 import '../../../config/session.dart';
 import '../profile_page.dart';
@@ -35,7 +36,7 @@ class _KritikPageState extends State<KritikPage> {
             TextButton(
                 onPressed: () {
                   Session.clearUser;
-                  Get.off(() => ProfilePage());
+                  Get.off(() => DashboardPage());
                 },
                 child: Text("klik disini untuk kembali")),
           ],
