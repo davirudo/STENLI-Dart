@@ -33,28 +33,9 @@ class _DonationPageState extends State<DonationPage> {
               DView.nothing(),
               Form(
                 child: Padding(
-                  padding: EdgeInsets.only(left: 20, right: 20, top: 5),
+                  padding: EdgeInsets.only(left: 20, right: 20, top: 30),
                   child: Column(
                     children: [
-                      Row(
-                        children: [
-                          Expanded(
-                            child: Row(
-                              children: [
-                                DView.spaceHeight(),
-                                Image.asset(
-                                  AppAsset.logo,
-                                  width: 38,
-                                ),
-                                Text(
-                                  "STENLI",
-                                  style: AppFonts.top,
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
                       Image.asset(
                         AppAsset.donasi,
                       ),

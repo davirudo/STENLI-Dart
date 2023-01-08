@@ -17,7 +17,7 @@ class AppFonts {
   static const top = TextStyle(
       color: Color(0xFF186A81), fontWeight: FontWeight.w700, fontSize: 20,);
   static const title = TextStyle(
-      color: Color(0xFFFFFFFF), fontWeight: FontWeight.w700, fontSize: 16);
+      color: Color(0xFFFFFFFF), fontWeight: FontWeight.w500, fontSize: 16);
   static const desc =
       TextStyle(color: Colors.white, fontWeight: FontWeight.w500, fontSize: 18);
 

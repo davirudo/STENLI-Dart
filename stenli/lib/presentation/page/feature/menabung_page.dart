@@ -39,7 +39,9 @@ class _MenabungPageState extends State<MenabungPage> {
     return Scaffold(
       appBar: CustomBar(judul: "Lama Menabung", lineColor: AppColor.yellow),
       body: SafeArea(
-          child: Column(
+          child: Padding(
+            padding: EdgeInsets.only(left: 20, right: 20, top: 50),
+            child: Column(
         children: [
           Text(
             "Tetapkan target menabung",
@@ -59,6 +61,7 @@ class _MenabungPageState extends State<MenabungPage> {
           InkWell(
             onTap: (() => hitung()),
             child: Card(
+            Card(
               color: Colors.grey[300],
               child: SizedBox(
                 width: 363,
@@ -68,6 +71,9 @@ class _MenabungPageState extends State<MenabungPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text("simpan", style: AppFonts.featureNominal),
+                    Text("Pengeluaran Fixed Kamu", style: AppFonts.featureName),
+                    Text(AppFormat.currency("2000000"),
+                        style: AppFonts.featureNominal),
                   ],
                 )),
               ),
@@ -110,8 +116,26 @@ class _MenabungPageState extends State<MenabungPage> {
               )),
             ),
           ),
+            Card(
+              color: Colors.grey[300],
+              child: SizedBox(
+                width: 363,
+                height: 75,
+                child: Center(
+                    child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("Pengeluaran Variable Kamu",
+                        style: AppFonts.featureName),
+                    Text(AppFormat.currency("500000"),
+                        style: AppFonts.featureNominal),
+                  ],
+                )),
+              ),
+            ),
         ],
-      )),
+      ),
+          )),
     );
   }
 }
