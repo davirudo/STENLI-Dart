@@ -8,11 +8,36 @@ import '../../config/app_request.dart';
 import '../../config/session.dart';
 import '../model/user.dart';
 
-class SourcePemasukan {
-  static Future<bool> post(String pemasukan) async {
-    String url = '${Api.pemasukan}/pemasukan_post.php';
+class SourcePengeluaran {
+  static Future<bool> post(
+      String tinggal,
+      String air,
+      String internet,
+      String keluarga,
+      String makan,
+      String bensin,
+      String peliharaan,
+      String donasi,
+      String belanja,
+      String hiburan,
+      String olahraga,
+      String edukasi,
+      String lainnya) async {
+    String url = '${Api.pengeluaran}/pengeluaran_post.php';
     Map? responseBody = await AppRequest.post(url, '', {
-      'pemasukan': pemasukan,
+      'tinggal': tinggal,
+      'air': air,
+      'internet': internet,
+      'keluarga': keluarga,
+      'makan': makan,
+      'bensin': bensin,
+      'peliharaan': peliharaan,
+      'donasi': donasi,
+      'belanja': belanja,
+      'hiburan': hiburan,
+      'olahraga': olahraga,
+      'edukasi': edukasi,
+      'lainnya': lainnya,
     });
     if (responseBody == null) return false;
 
@@ -31,8 +56,8 @@ class SourcePemasukan {
     return responseBody['success'];
   }
 
-  static Future<Map> PemasukanList() async {
-    String url = '${Api.pemasukan}/pemasukan_list.php';
+  static Future<Map> PengeluaranList() async {
+    String url = '${Api.pengeluaran}/pengeluaran_list.php';
     Map? responseBody = await AppRequest.post(url, '', {});
 
     if (responseBody == null) {
