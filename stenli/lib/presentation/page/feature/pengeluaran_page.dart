@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:get/get.dart';
 import 'package:stenli/config/app_assets.dart';
 import 'package:stenli/config/app_color.dart';
 import 'package:stenli/data/source/source_pengeluaran.dart';
+import 'package:stenli/presentation/controller/c_pengeluaran.dart';
 
+import '../../../config/app_theme.dart';
 import '../../../config/widget/app_bar.dart';
 
 class PengeluaranPage extends StatefulWidget {
-  PengeluaranPage({super.key});
+  PengeluaranPage({isLoading});
 
   @override
   State<PengeluaranPage> createState() => _PengeluaranPageState();
@@ -28,7 +31,9 @@ class _PengeluaranPageState extends State<PengeluaranPage> {
   final controllerOlahraga = TextEditingController();
   final controllerEdukasi = TextEditingController();
   final controllerLainya = TextEditingController();
+  var cPengeluaran = Get.put(CPengeluaran());
 
+  RxBool? isLoading = true.obs;
   tambah() async {
     await SourcePengeluaran.post(
         controllerTinggal.text,
@@ -43,13 +48,17 @@ class _PengeluaranPageState extends State<PengeluaranPage> {
         controllerHiburan.text,
         controllerOlahraga.text,
         controllerEdukasi.text,
-        controllerLainya.text);
+        controllerLainya.text,
+        );
+        isLoading!.value = true;
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomBar(judul: "Pengeluaran", lineColor: AppColor.sblue),
+      
+      appBar: CustomBar(
+        judul: "Pengeluaran", lineColor: AppColor.sblue),
       body: SafeArea(
           child: ListView(
         children: [
@@ -158,15 +167,31 @@ class _PengeluaranPageState extends State<PengeluaranPage> {
               hintText: '10000',
             ),
           ),
-          InkWell(
-            child: TextButton(
-              onPressed: () {
-                tambah();
-              },
-              child: Text("tambahkan", style: TextStyle(color: Colors.white)),
-              style: TextButton.styleFrom(backgroundColor: AppColor.sred),
-            ),
-          )
+          Obx(() => isLoading!.value
+              ? Center(
+                  child: Material(
+                    //button//
+                    color: AppColor.primary,
+                    borderRadius: BorderRadius.circular(15),
+                    child: InkWell(
+                      borderRadius: BorderRadius.circular(40),
+                      onTap: () {
+                        isLoading!.value = false;
+                        tambah();
+                        cPengeluaran.getAnalysis();
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 100, vertical: 16),
+                        child: Text(
+                          'SIMPAN',
+                          style: whiteTextStyle.copyWith(fontSize: 16),
+                        ),
+                      ),
+                    ),
+                  ),
+                )
+              : Center(child: CircularProgressIndicator()))
         ],
       )),
     );

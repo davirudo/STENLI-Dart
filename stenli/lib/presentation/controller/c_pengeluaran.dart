@@ -5,38 +5,39 @@ import 'package:stenli/data/source/source_pemasukan.dart';
 import 'package:stenli/data/source/source_pengeluaran.dart';
 
 class CPengeluaran extends GetxController {
-  final _total = 0.0.obs;
-  double get total => _total.value;
+  RxDouble? _total = 0.0.obs;
+  double get total => _total!.value;
 
-  final _totaldarurat = 0.0.obs;
-  double get totaldarurat => _totaldarurat.value;
+  RxDouble? _totaldarurat = 0.0.obs;
+  double get totaldarurat => _totaldarurat!.value;
 
-  final _fixed = 0.0.obs;
-  double get fixed => _fixed.value;
+  RxDouble? _fixed = 0.0.obs;
+  double get fixed => _fixed!.value;
 
-  final _fixeddarurat = 0.0.obs;
-  double get fixeddarurat => _fixeddarurat.value;
+  RxDouble? _fixeddarurat = 0.0.obs;
+  double get fixeddarurat => _fixeddarurat!.value;
 
-  final _variable = 0.0.obs;
-  double get variable => _variable.value;
+  RxDouble? _variable = 0.0.obs;
+  double get variable => _variable!.value;
 
-  final _variabledarurat = 0.0.obs;
-  double get variabledarurat => _variabledarurat.value;
+  RxDouble? _variabledarurat = 0.0.obs;
+  double get variabledarurat => _variabledarurat!.value;
 
-  final _sisihan = 0.0.obs;
-  double get sisihan => _sisihan.value;
+  RxDouble? _sisihan = 0.0.obs;
+  double get sisihan => _sisihan!.value;
 
-  final _ppb = 0.0.obs;
-  double get ppb => _ppb.value;
+  RxDouble? _ppb = 0.0.obs;
+  double get ppb => _ppb!.value;
 
-  final _ppm = 0.0.obs;
-  double get ppm => _ppm.value;
+  RxDouble? _ppm = 0.0.obs;
+  double get ppm => _ppm!.value;
 
-  final _ddpb = 0.0.obs;
-  double get ddpb => _ddpb.value;
+  RxDouble? _ddpb = 0.0.obs;
+  double get ddpb => _ddpb!.value;
 
-  final _menabung = 0.0.obs;
-  double get menabung => _menabung.value.toPrecision(1);
+  RxDouble? _menabung = 0.0.obs;
+  double get menabung => _menabung!.value.toPrecision(1);
+
   getAnalysis() async {
     Map data = await SourcePengeluaran.PengeluaranList();
 
@@ -53,9 +54,9 @@ class CPengeluaran extends GetxController {
     double olahraga = data['olahraga'].toDouble();
     double edukasi = data['edukasi'].toDouble();
     double lainnya = data['lainnya'].toDouble();
-    _fixed.value = (tinggal + air + internet + keluarga).abs();
+    _fixed!.value = (tinggal + air + internet + keluarga).abs();
 
-    _variable.value = (makan +
+    _variable!.value = (makan +
             bensin +
             peliharaan +
             donasi +
@@ -66,11 +67,11 @@ class CPengeluaran extends GetxController {
             lainnya)
         .abs();
 
-    _fixeddarurat.value = (fixed * 6);
+    _fixeddarurat!.value = (fixed * 6);
 
-    _variabledarurat.value = (variable * 6);
+    _variabledarurat!.value = (variable * 6);
 
-    _total.value = (tinggal +
+    _total!.value = (tinggal +
             air +
             internet +
             keluarga +
@@ -84,18 +85,18 @@ class CPengeluaran extends GetxController {
             edukasi +
             lainnya)
         .abs();
-    _totaldarurat.value = (total * 6);
+    _totaldarurat!.value = (total * 6);
   }
 
   HitungMenabung(double target, double pendapatan) async {
     double hasil = (pendapatan - fixed);
-    _sisihan.value = (hasil * 10 / 100);
-    _menabung.value = (target / sisihan);
+    _sisihan!.value = (hasil * 10 / 100);
+    _menabung!.value = (target / sisihan);
   }
 
   Batas() async {
-    _ppb.value = (total / 5);
-    _ppm.value = (ppb - (ppb / 4));
-    _ddpb.value = (ppb * 4);
+    _ppb!.value = (total / 5);
+    _ppm!.value = (ppb - (ppb / 4));
+    _ddpb!.value = (ppb * 4);
   }
 }
