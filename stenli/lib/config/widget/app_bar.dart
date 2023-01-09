@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stenli/config/app_theme.dart';
+import 'package:stenli/presentation/page/dashboard_page.dart';
 import '../app_assets.dart';
 import '../app_color.dart';
 import '../app_fonts.dart';
@@ -16,6 +17,13 @@ class CustomBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      leading: IconButton(
+        icon: const Icon(Icons.arrow_back),
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => DashboardPage()));
+        },
+      ),
       toolbarHeight: 70,
       backgroundColor: Colors.white,
       foregroundColor: AppColor.primary,
@@ -23,7 +31,10 @@ class CustomBar extends StatelessWidget implements PreferredSizeWidget {
       elevation: 4,
       title: Text(
         judul,
-        style: primaryTextStyle.copyWith(fontWeight: semiBold),
+        style: primaryTextStyle.copyWith(
+          fontWeight: semiBold,
+          fontSize: 18,
+        ),
       ),
       actions: <Widget>[
         Padding(
@@ -37,8 +48,9 @@ class CustomBar extends StatelessWidget implements PreferredSizeWidget {
               ),
               Text(
                 "STENLI",
-                style: primaryTextStyle.copyWith(fontWeight: bold, fontSize: 20
-              ),),
+                style:
+                    primaryTextStyle.copyWith(fontWeight: bold, fontSize: 20),
+              ),
             ],
           ),
         ),
