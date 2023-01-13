@@ -2,6 +2,7 @@ import 'package:d_chart/d_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:stenli/config/app_color.dart';
+import 'package:stenli/config/app_theme.dart';
 
 import '../../../config/app_fonts.dart';
 import '../../../config/app_format.dart';
@@ -24,56 +25,13 @@ class _FaqPageState extends State<FaqPage> {
       body: SafeArea(
           child: Column(
         children: [
-          AspectRatio(
-            aspectRatio: 16 / 9,
-            child: DChartPie(
-              data: [
-                {'domain': 'Flutter', 'measure': 200},
-                {'domain': 'React Native', 'measure': 50}
-              ],
-              fillColor: (pieData, index) => AppColor.blue,
-              donutWidth: 30,
-              labelColor: Colors.white,
-            ),
+          Text(
+            "Frequently Asked Questions",
+            style: blackTextStyle,
           ),
-          Card(
-            color: Colors.grey[300],
-            child: SizedBox(
-              width: 363,
-              height: 75,
-              child: Center(
-                  child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text("Pengeluaran Fixed Kamu", style: AppFonts.featureName),
-                  Obx((() {
-                    return Text(
-                        AppFormat.currency(cPengeluaran.fixed.toString()),
-                        style: AppFonts.featureName);
-                  })),
-                ],
-              )),
-            ),
-          ),
-          Card(
-            color: Colors.grey[300],
-            child: SizedBox(
-              width: 363,
-              height: 75,
-              child: Center(
-                  child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text("Pengeluaran Variable Kamu",
-                      style: AppFonts.featureName),
-                  Obx((() {
-                    return Text(
-                        AppFormat.currency(cPengeluaran.variable.toString()),
-                        style: AppFonts.featureName);
-                  })),
-                ],
-              )),
-            ),
+          Text(
+            "Masih dalam masa pengembangan",
+            style: blackTextStyle,
           ),
         ],
       )),
